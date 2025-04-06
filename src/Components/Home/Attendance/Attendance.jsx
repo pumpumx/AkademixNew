@@ -40,7 +40,7 @@ function Attendance(id = "12323003") {
     <>
       <div className='w-full h-[100vh] bg-gray-300 '>
         <nav className='w-full h-[15%] flex justify-center items-center'>
-          <div className="profile w-[70%] h-[80%] bg-slate-500  rounded-lg justify-center flex items-center">
+          <div className="profile w-[70%] h-[80%] bg-orange-400 rounded-lg justify-center flex items-center">
             <Profile id={id} />
           </div>
         </nav>
