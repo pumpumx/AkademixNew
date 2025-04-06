@@ -21,7 +21,7 @@ function Navbar() {
         <div className='User font-bold  '>{name}</div>
         <div className='Role text-gray-800 text-xs'>{role}</div>
         </div>
-        <div className='Profile w-[50px] h-[40px] bg-contain motion-paused hover:motion-preset-oscillate-md'><img src="src/assets/download.jpeg" alt="" className='rounded-full'/></div>
+        <div className='Profile w-[50px] h-[40px] bg-contain motion-paused hover:motion-preset-oscillate-md'><img src="/images/download.jpeg" alt="" className='rounded-full'/></div>
         </div>
     </div>
   )
