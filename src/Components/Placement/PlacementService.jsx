@@ -90,7 +90,7 @@ const StudentPathwayChart = () => {
   };
 
   return (
-    <div className="w-full h-96 p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl shadow-lg">
+    <div className="w-full h-full p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl shadow-lg">
       <h3 className="text-2xl font-bold mb-2 text-center  text-orange-400" >Alumini Distribution</h3>
       <div className="text-sm text-center text-gray-500 mb-6">Total Aluminies: {formatNumber(totalEmployees)}</div>
       

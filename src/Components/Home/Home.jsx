@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import { Sidebar, Navbar , Subject , RecentMessages , StudentPathwayChart,  Fee , Announcement, Happenings , Authorities , Footer , ExamSchedule , WeeklyTimetable , ChatbotWithEmoji} from '../index'
+import { Sidebar, Navbar , Subject , PlacementDrivesGrid , RecentMessages , StudentPathwayChart,  Fee , Announcement, Happenings , Authorities , Footer , ExamSchedule , WeeklyTimetable , ChatbotWithEmoji} from '../index'
 import Tab from './Tab/Tab'
 import { nanoid } from '@reduxjs/toolkit'
 
@@ -11,10 +11,10 @@ function Home() {
   }
 
   const images = [
-    {url: "src/assets/images/1.jpeg"},
-    {url: "src/assets/images/2.jpeg"},
-    {url: "src/assets/images/3.jpeg"},
-    {url: "src/assets/images/4.jpeg"},
+    {url: "/images/1.jpeg"},
+    {url: "/images/2.jpeg"},
+    {url: "/images/3.jpeg"},
+    {url: "/images/4.jpeg"},
 ]
   const tempData = [
     {
@@ -43,15 +43,9 @@ function Home() {
         Attendance: "92"
     }
 ]
-const motivation = [
-  {url: "src/assets/motivation/1.jpeg"},
-  {url: "src/assets/motivation/2.jpeg"},
-  {url: "src/assets/motivation/3.jpeg"},
-  {url: "src/assets/motivation/4.jpeg"},
-]
   const authoritiesInfo = [
      {
-      imageLink: "src/assets/AuthoritiesImg/dog1.jpg",
+      imageLink: "/AuthoritiesImg/dog1.jpg",
       Name: "Adi",
       Designation: "Head of School",
       contact: "1829320212",
@@ -59,28 +53,28 @@ const motivation = [
 
      },
      {
-      imageLink: "src/assets/AuthoritiesImg/dog2.jpg",
+      imageLink: "/AuthoritiesImg/dog2.jpg",
       Name: "Raj",
       Designation: "Head of Department",
       contact: "1829313213",
       Role: "Mentor",
      },
      {
-      imageLink: "src/assets/AuthoritiesImg/dog3.jpg",
+      imageLink: "/AuthoritiesImg/dog3.jpg",
       Name: "Naaz",
       Designation: "Head of Faculty",
       contact: "78423842784",
       Role: "Front-End Professor",
      },
      {
-      imageLink: "src/assets/AuthoritiesImg/dog4.jpg",
+      imageLink: "/AuthoritiesImg/dog4.jpg",
       Name: "Nishant",
       Designation: "Principal",
       contact: "60053242423",
       Role: "Event Organiser",
      },
      {
-      imageLink: "src/assets/AuthoritiesImg/dog5.jpg",
+      imageLink: "/AuthoritiesImg/dog5.jpg",
       Name: "Dog 1",
       Designation: "Head of School",
       contact: "1829320212",
@@ -90,7 +84,7 @@ const motivation = [
   ]
   return (
     <>
-      <div className='flex pr-1  w-full h-[250vh] flex-grow  bg-slate-200 '>
+      <div className='flex pr-1 w-full h-[250vh] flex-grow  bg-slate-200 '>
       <ChatbotWithEmoji />
         <div className={` ${dataSidebar ? "min-w-0" : "max-w-[15vw]"}  overflow-hidden flex flex-grow `}>
           <Sidebar sendDataToHome={handleDataFromSidebar} />
@@ -129,7 +123,7 @@ const motivation = [
               // style="motion-translate-y-in-100 motion-loop-once motion-duration-[1s] motion-ease-spring-smooth motion-delay-150 motion-blur-md"
 
             />
-          </div>
+          </div>  
           <div className='w-full gap-4 h-[40vh] mt-6 rounded-md flex'>  {/*Middle Section Div*/}
             <div className='w-[50%] bg-contain z-0 shadow-gray-400 shadow-[0_0_20px_0.25rem] h-full overflow-hidden rounded-md '>
               <Announcement images={images}/>
@@ -186,14 +180,9 @@ const motivation = [
             <p className='text-3xl font-medium '>Placement Details</p>
             <div className='w-full h-[3%] bg-gray-500 mt-4'></div> 
           </div>
-          <div className='w-full h-[40vh] gap-[1%] flex '>  {/*Placement Section Div*/}
-            <div className='w-[60%] h-full shadow-gray-400 shadow-[0_0_20px_0.25rem] rounded-md'>
+          <div className='w-[100%] h-[40vh] gap-[1%] flex '>  {/*Placement Section Div*/}
+            <div className='w-[100%] h-full shadow-gray-400 shadow-[0_0_20px_0.25rem] rounded-md'>
             <StudentPathwayChart />
-            </div>
-            <div className='w-[40%] h-full bg-red-900 shadow-gray-400 shadow-[0_0_20px_0.25rem] rounded-md'>
-                <div className='w-full h-[100%] object-cover'>
-                  <Announcement images={motivation}/>
-                </div>
             </div>
           </div>
           <div className='w-full h-[10vh] mt-[3%] mb-[1%] '>  {/* Know your Authorities text div */}

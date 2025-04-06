@@ -57,8 +57,8 @@ const WeeklyTimetable = () => {
   };
 
   return (
-    <div className="bg-blue-500 shadow-lg overflow-y-scroll no-scrollbar overflow-hidden max-w-6xl mx-auto w-full h-full ">
-      <div className="bg-white p-4 md:p-6">
+    <div className="bg-blue-500 shadow-lg overflow-y-scroll no-scrollbar overflow-hidden  mx-auto w-full h-full ">
+      <div className="bg-white p-4 md:p-6 w-full h-full">
         <div className="overflow-x-auto rounded-lg border border-gray-200">
           <table className="w-full">
             <thead>

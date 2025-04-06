@@ -17,6 +17,7 @@ import ChatbotWithEmoji from "./ai/Assistant.jsx";
 import AiPanel from "./ai/AiPanel.jsx";
 import StudentPathwayChart from "./Placement/PlacementService.jsx";
 import RecentMessages from "./Home/Messages/Messages.jsx";
+import PlacementDrivesGrid from "./Home/Placement/Placement.jsx";
 export {
     Sidebar,
     Navbar,
@@ -36,5 +37,6 @@ export {
     ChatbotWithEmoji,
     AiPanel,
     StudentPathwayChart,
-    RecentMessages
+    RecentMessages,
+    PlacementDrivesGrid
 }
