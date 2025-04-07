@@ -72,7 +72,7 @@ function Home() {
       Designation: "Principal",
       contact: "60053242423",
       Role: "Event Organiser",
-     },
+     }, 
      {
       imageLink: "/AuthoritiesImg/dog5.jpg",
       Name: "Dog 1",
@@ -84,12 +84,12 @@ function Home() {
   ]
   return (
     <>
-      <div className='flex pr-1 w-full h-[250vh] flex-grow  bg-slate-200 '>
+      <div className='flex w-full h-[250vh] flex-grow  bg-slate-200 '>
       <ChatbotWithEmoji />
         <div className={` ${dataSidebar ? "min-w-0" : "max-w-[15vw]"}  overflow-hidden flex flex-grow `}>
           <Sidebar sendDataToHome={handleDataFromSidebar} />
         </div>
-        <div className={`grid-div  ${dataSidebar ? "min-w-[97%]" : "min-w-[85vw]"} transition-all h-full `}>  {/* Main Section */}
+        <div className={`grid-div  ${dataSidebar ? "min-w-[97%]" : "max-w-[85vw]"} transition-all h-full `}>  {/* Main Section */}
           <div className='w-full h-[8vh] mb-3 '>
             <Navbar />
           </div>

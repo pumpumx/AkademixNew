@@ -2,7 +2,7 @@ import React from 'react'
 import SimpleImageSlider from "react-simple-image-slider";
 function Announcement({images=[{}]}) {
   return (
-    <div className='w-full h-full z-1 object-cover relative  '>
+    <div className='w-full h-full z-1 overflow-hidden object-cover relative  '>
         <SimpleImageSlider
         width={"100%"}
         height={"100%"}
