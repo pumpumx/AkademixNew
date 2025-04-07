@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const appUrl = 'https://8eafdea0642287.lhr.life/Php/register.php'
+const appUrl = 'https://de370ee81aa563.lhr.life/Php/register.php'
 
 export const loginUser = async (userData) => {
     try {
