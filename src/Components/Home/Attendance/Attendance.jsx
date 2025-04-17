@@ -3,39 +3,33 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 import { nanoid } from '@reduxjs/toolkit'
 import { Subject, Profile, ChartAnalysis } from '../../index'
-function Attendance(id = "12323003") {
+import axios from 'axios'
+function Attendance(id="101") {
 
-  const [Attendance, setAttendance] = useState("")
-  const tempData = [{
-    code: "302",
-    description: "Computer Science ",
-    Attendance: "81",
-  },
-  {
-    code: "321",
-    description: "Electronics",
-    Attendance: "72",
-  },
-  {
-    code: "345",
-    description: "Robotics",
-    Attendance: "47"
-  },
-  {
-    code: "300",
-    description: "Mathematics",
-    Attendance: "89"
-  },
-  {
-    code: "322",
-    description: "DSA",
-    Attendance: "92"
-  }
-  ]
+  const [attendanceData , setAttendanceData]  = useState([])
 
-  useEffect((id) => {
-    //Fetching data Logic
-  })
+ 
+  useEffect(() => {
+    const fetchAttendance = async () => {
+      try {
+        const res = await axios.get(`http://localhost:82/Php/attendance.php?userid=${101}`);
+        console.log("Full Response:", res);
+        
+        if (res.data && res.data.status === 'success') {
+          // Log the actual data
+          console.log("Attendance Data:", res.data.data);
+          setAttendanceData(res.data.data); // Set the data
+        } else {
+          setError('No attendance data found.');
+        }
+      } catch (error) {
+        console.log("Error:", error);
+      }
+    };
+
+    fetchAttendance();
+  }, [id]);
+
   return (
     <>
       <div className='w-full h-[100vh] bg-gray-300 '>
@@ -46,7 +40,7 @@ function Attendance(id = "12323003") {
         </nav>
         <div className=" flex flex-grow gap-4 h-[60%] w-full justify-center items-center ">
           <div className='w-[35%]  h-full flex flex-col gap-2 justify-between text-center'>
-            {tempData.map((e) => ( //Change temp with the SubjectCodes array.
+            {attendanceData.map((e) => ( //Change temp with the SubjectCodes array.
               <div key={nanoid()}>
                 <Subject SubjectDescription={e.description} subjectCode={e.code} attendance={e.Attendance} bgColor={true}/>
               </div>

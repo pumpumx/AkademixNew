@@ -11,7 +11,7 @@ export const subjectAttendance = async ({id , subjectCode , mode})=>{
         return {status:"error" , message:{
             err: error,
             res: "error while fetching"
-        }}
+        }} 
     }
 }
 
