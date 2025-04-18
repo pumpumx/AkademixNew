@@ -7,7 +7,37 @@ import axios from 'axios'
 function Attendance(id="101") {
 
   const [attendanceData , setAttendanceData]  = useState([])
-
+  const attendanceDate = {
+  status: "success",
+  userid: "101",
+  data: [
+    {
+      code: "302",
+      description: "Computer Science",
+      Attendance: "81"
+    },
+    {
+      code: "321",
+      description: "Electronics",
+      Attendance: "72"
+    },
+    {
+      code: "345",
+      description: "Robotics",
+      Attendance: "47"
+    },
+    {
+      code: "300",
+      description: "Mathematics",
+      Attendance: "89"
+    },
+    {
+      code: "322",
+      description: "DSA",
+      Attendance: "92"
+    }
+  ]
+};
  
   useEffect(() => {
     const fetchAttendance = async () => {
@@ -40,7 +70,7 @@ function Attendance(id="101") {
         </nav>
         <div className=" flex flex-grow gap-4 h-[60%] w-full justify-center items-center ">
           <div className='w-[35%]  h-full flex flex-col gap-2 justify-between text-center'>
-            {attendanceData.map((e) => ( //Change temp with the SubjectCodes array.
+            {attendanceDate.map((e) => ( //Change temp with the SubjectCodes array.
               <div key={nanoid()}>
                 <Subject SubjectDescription={e.description} subjectCode={e.code} attendance={e.Attendance} bgColor={true}/>
               </div>
