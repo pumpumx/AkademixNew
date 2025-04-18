@@ -7,10 +7,7 @@ import axios from 'axios'
 function Attendance(id="101") {
 
   const [attendanceData , setAttendanceData]  = useState([])
-  const attendanceDate = {
-  status: "success",
-  userid: "101",
-  data: [
+  const attendanceDate = [
     {
       code: "302",
       description: "Computer Science",
@@ -37,7 +34,6 @@ function Attendance(id="101") {
       Attendance: "92"
     }
   ]
-};
  
   useEffect(() => {
     const fetchAttendance = async () => {
