@@ -103,7 +103,7 @@ function Login() {
                     <button type='button' className={`text-white font-bold ml-2`} onClick={() => sendEmail(email)} > Send Otp </button>
                     <input type="password" placeholder="Password" required value={password} onChange={(e) => setPassword(e.target.value)} className="w-full placeholder-white border-b-2 px-1 pt-2 text-xl border-gray-300 pb-2 bg-black text-white" />
                     <input type="text" placeholder="OTP" required onChange={(e) => setOtp(e.target.value)} className="w-full pt-2 px-1 text-xl border-b-2 placeholder-white border-gray-300 pb-2 bg-black text-white" />
-                    <button type="submit" className="w-full bg-gray-200 text-black font-bold py-3 rounded-lg">Sign Up</button>
+                    <button type="submit" className="w-full bg-gray-200 text-black font-bold py-3 rounded-lg" onClick={navigate('/home')}>Sign Up</button>
                   </form>
                   <p className="text-center mt-4 text-white ">Already have an account? <button className="text-white" onClick={handler}>Sign In</button></p>
                 </div>
@@ -125,7 +125,7 @@ function Login() {
             px-1 text-xl border-b-2 text-white bg-black pb-2 focus:border-blue-600 placeholder-white" />
                     <button type='button' className={`text-white font-bold ml-2`} onClick={() => sendEmail(email)} > Send Otp </button>
 
-                    <button type="submit" className="w-full  bg-gray-300 text-black  py-3 rounded-lg font-bold">Sign In</button>
+                    <button type="submit" className="w-full  bg-gray-300 text-black  py-3 rounded-lg font-bold onClick={navigate('/home')}">Sign In</button>
                   </form>
                   <p className="text-center text-white mt-4 ">Don't have an account? <button className="text-white font-bold" onClick={handler}>Sign Up</button></p>
                 </div>
