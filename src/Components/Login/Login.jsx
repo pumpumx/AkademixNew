@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { loginUser, registerUser } from '../../api/auth'
+import { loginUser, registerUser } from '../../api/auth.js'
 import { useNavigate } from 'react-router-dom'
 import emailjs from '@emailjs/browser'
 function Login() {
-  const [fname, setFname] = useState("")
-  const [lname, setLname] = useState("")
+  const [fullName, setFullName] = useState("")
+  const [username, setUsername] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [visible, setVisible] = useState(false)
@@ -49,14 +49,14 @@ function Login() {
     e.preventDefault();
     const formData = {
       option: visible,
-      firstName: fname,
-      lastName: lname,
+      fullName: fname,
+      username: lname,
       email: email,
       password: password,
     };
     const response = await handleSubmit(formData);
     // alert(response.message || "Something went wrong"); // Show success/error messages
-    if (response.status === 'success' && otp == verifyOtp) {
+    if (response.status === 200 && otp == verifyOtp) {
       navigate('/home')
     }
     else {
@@ -97,8 +97,8 @@ function Login() {
                 </div>
                 <div className="p-6 outline-none border-none">
                   <form method="post" onSubmit={onSubmit} className="space-y-6">
-                    <input type="text" placeholder="First Name" required value={fname} onChange={(e) => setFname(e.target.value)} className="w-full border-b-2 px-1 pt-2 text-xl placeholder-white bg-black text-white" />
-                    <input type="text" placeholder="Last Name" required value={lname} onChange={(e) => setLname(e.target.value)} className="w-full border-b-2 px-1 pt-2 text-xl placeholder-white bg-black text-white" />
+                    <input type="text" placeholder="Full Name" required value={fullName} onChange={(e) => setFullName(e.target.value)} className="w-full border-b-2 px-1 pt-2 text-xl placeholder-white bg-black text-white" />
+                    <input type="text" placeholder="userName" required value={username} onChange={(e) => setUsername(e.target.value)} className="w-full border-b-2 px-1 pt-2 text-xl placeholder-white bg-black text-white" />
                     <input type="email" placeholder="Email" required value={email} onChange={(e) => setEmail(e.target.value)} className="w-full border-b-2 px-1 pt-2 text-xl placeholder-white bg-black text-white" />
                     <button type='button' className={`text-white font-bold ml-2`} onClick={() => sendEmail(email)} > Send Otp </button>
                     <input type="password" placeholder="Password" required value={password} onChange={(e) => setPassword(e.target.value)} className="w-full placeholder-white border-b-2 px-1 pt-2 text-xl border-gray-300 pb-2 bg-black text-white" />

@@ -1,29 +1,25 @@
-import axios from 'axios'
+import axios from "axios";
 
-const appUrl = 'https://a5c4c493fdd1d5.lhr.life/Php/register.php'
-
-export const loginUser = async (userData) => {
-    try {
-        const response = await axios.post(appUrl,userData,{
-            headers: {'Content-Type':'application/json'}
-        })
-        console.log("Login response " , response.data)
-        return response.data
-    } catch (error) {
-        console.log("Login error :: ",error)
-        return error.response.data || { message: "Login request failed" };
-    }   
+const registerUser = async(formdata)=>{
+   try {
+     console.log("formdata")
+     const response = axios.post("http://localhost:8000/api/users/v1/register" , formdata)
+ 
+     return response.json()
+ 
+   } catch (error) {
+    console.log("Error while registering user" , error)
+    return null;
+   }
 }
 
-export const registerUser = async (userData) => {
-    try {
-        const response = await axios.post(appUrl,userData,{
-            headers: {'Content-Type':'application/json'}
-        })
-        console.log("Register response " , response.data)
-        return response.data
-    } catch (error) {
-        console.log(" registration error :: ",error)
-        return error.response.data || { message: "Register request failed" };
-    }
+
+
+const loginUser = ()=>{
+
+}
+
+export {
+    registerUser,
+    loginUser
 }
